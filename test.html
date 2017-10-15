@@ -26,6 +26,15 @@
     var line2 = document.getElementById("line2");
     var line3 = document.getElementById("line3");
     var line4 = document.getElementById("line4");
+    
+    var path = document.getElementById("path");
+    var startx = "M 0";
+    var starty = "0"
+    var midx = parseInt(svg1.style.width, 10) / 2;
+    var midy = parseInt(svg1.style.height, 10) * .75;
+    var endx = parseInt(svg1.style.width, 10);
+    var endy = parseInt(svg1.style.height, 10);
+    var coords = startx + " " + starty + " q " + midx + " " + midy + " " + endx + " " + endy;
      
     
     if (a < x) {
@@ -34,7 +43,7 @@
       line1.setAttribute ("x1", "0");
       line1.setAttribute ("y1", "100%");
       line1.setAttribute ("x2", "100%");
-      line1.setAttribute ("y2", "0");   
+      line1.setAttribute ("y2", "0");        
     }
     
     else {
@@ -44,6 +53,7 @@
       line1.setAttribute ("y1", "0");
       line1.setAttribute ("x2", "100%");
       line1.setAttribute ("y2", "100%");
+      path.setAttribute ("d", coords);
     }
     
         
@@ -209,6 +219,7 @@
 
 <svg id="svg1">
   <line id="line1" x1="0" y1="0" x2="100%" y2="100%" style="position: absolute; stroke: yellow; stroke-width: 3" />
+  <path id="path" d="M 0 0 q 400 300 800 0" stroke="yellow" stroke-width="5" fill="none" />
   Sorry, your browser does not support inline SVG.
 </svg>
 
@@ -251,13 +262,17 @@
   <p>Nullam rhoncus aliquam metus. Suspendisse sagittis ultrices augue. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Vivamus luctus egestas leo. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Nullam at arcu a est sollicitudin euismod. Etiam posuere lacus quis dolor. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Vivamus luctus egestas leo. Nulla non lectus sed nisl molestie malesuada. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Nunc auctor. Ut tempus purus at lorem. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat.</p>
 </div>
 
+ <svg height="400" width="800">
+  
+</svg> 
+
 <script>
 
-  document.getElementById("svg1").style.width = document.getElementById("fixdiv").offsetLeft - 100;
-  document.getElementById("svg2").style.width = document.getElementById("fixdiv").offsetLeft - 100;
-  document.getElementById("svg3").style.width = document.getElementById("fixdiv").offsetLeft - 100;
-  document.getElementById("svg4").style.width = document.getElementById("fixdiv").offsetLeft - 50;
-
+    document.getElementById("svg1").style.width = document.getElementById("fixdiv").offsetLeft - 100;
+    document.getElementById("svg2").style.width = document.getElementById("fixdiv").offsetLeft - 100;
+    document.getElementById("svg3").style.width = document.getElementById("fixdiv").offsetLeft - 100;
+    document.getElementById("svg4").style.width = document.getElementById("fixdiv").offsetLeft - 50;
+    
 </script>
 
 
